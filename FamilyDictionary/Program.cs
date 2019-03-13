@@ -7,22 +7,39 @@ namespace FamilyDictionary
     {
         static void Main(string[] args)
         {
-
+            // Creates the Dictionary
             Dictionary<string, Dictionary<string, string>> myFamily = new Dictionary<string, Dictionary<string, string>>();
 
+            // Adds to the Dictionary
             myFamily.Add("sister", new Dictionary<string, string>() { { "name", "Krista" }, { "age", "42" } });
 
+            string personChoose = " ";
+            string personAge = " ";
+            // Loops over the Dictionary
+            
+            Console.WriteLine($"This is the first {personChoose}");
             foreach (var (person, details) in myFamily)
             {
-                Console.WriteLine($"This person {person} has these details : ");
                 foreach (var detail in details)
                 {
-                    Console.WriteLine(detail.Key);
+                    if (detail.Value == "Krista")
+                    {
+                        personChoose = "Krista";
+                    }
+                    if (detail.Value == "42" )
+                    {
+                        personAge = "42";
+                    }
                 }
-                Console.WriteLine("\n");
+                
+                Console.WriteLine($"{personChoose} is my sister and is {personAge} years old");
             }
 
             Console.ReadLine();
         }
     }
 }
+               
+
+                    
+
